@@ -1,7 +1,7 @@
 import { setOwnsBlueJeans } from "./transientState.js";
 //Creating a new function that checks if the changed element is a radio button with the name "ownJeans"
 const handleOwnershipChange = (changeEvent) => {
-  if (changeEvent.target.name === "ownJeans") {
+  if (changeEvent.target.name === "ownsJeans") {
     //Converts the string value("true" or "false") to an actual boolean using JSON.parse()
     const convertedToBoolean = JSON.parse(changeEvent.target.value);
     //Calls our funciton with the boolean value
