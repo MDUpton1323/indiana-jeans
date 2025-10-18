@@ -1,7 +1,19 @@
+import { setSocioLocationId } from "./transientState.js";
+
+const handleLocationChange = (changeEvent) => {
+  if (changeEvent.target.name === "location") {
+    const locationId = parseInt(changeEvent.target.value);
+    setSocioLocationId(locationId);
+  }
+};
+
 export const LocationChoices = async () => {
   //TODO: Fetch locations from the API
   const response = await fetch("http://localhost:8088/socioLocations");
   const locations = await response.json();
+
+  document.addEventListener("change", handleLocationChange);
+
   let html = `
     <div class="survey-input">
         <h2>What tpe of area do you live in?</h2>
