@@ -1,7 +1,9 @@
+import { saveSurveySubmission } from "./transientState.js";
 //Define HandleSurveySubmission function that checks if the clicked element has the ID "submission-button", if so logs a message to the console
 const handleSurveySubmission = (clickEvent) => {
   if (clickEvent.target.id === "submission-button") {
     console.log("Button clicked!");
+    saveSurveySubmission();
   }
 };
 //Create and export SubmissionButton component
