@@ -41,6 +41,10 @@ export const saveSurveySubmission = async () => {
     postOptions
   );
 
+  //Dispatch a custom event when the submission is complete
+  const newSubmissionEvent = new CustomEvent("newSubmissionCreated");
+  document.dispatchEvent(newSubmissionEvent);
+
   //Todo: Add fetch() call here
   console.log("Saving survey to database...");
   console.log(transientState);
