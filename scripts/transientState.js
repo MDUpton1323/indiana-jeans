@@ -1,7 +1,7 @@
 //Set up the transient state data structure and provide initial values
 const transientState = {
   ownsBlueJeans: false,
-  socioLocations: 0,
+  socioLocationId: 0,
 };
 
 //Functions to modify each property of transient state
