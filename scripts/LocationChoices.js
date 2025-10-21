@@ -16,13 +16,14 @@ export const LocationChoices = async () => {
 
   let html = `
     <div class="survey-input">
-        <h2>What tpe of area do you live in?</h2>
+        <h2>What type of area do you live in?</h2>
         `;
   //TODO: generate radio buttons and add to html
-  for (const location of locations) {
-    html += `
-    <input type="radio" name="location" value="${location.id}" />${location.label}`;
-  }
+  const locationsHTML = locations.map((location) => {
+    return `<input type="radio" name="location" value="${location.id}" />${location.label}`;
+  });
+  //Join the array of strings into a single string and add to our HTML
+  html += locationsHTML.join("");
 
   html += `
     </div>
